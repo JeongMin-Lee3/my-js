@@ -1,0 +1,359 @@
+* {
+    box-sizing: border-box;
+}
+
+body.todo-page {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #f1f3f5;
+    font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", sans-serif;
+    font-size: 14px;
+    color: #222;
+    display: block;
+}
+
+.naver-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.naver-logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: #222;
+}
+
+.logo-n {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: #03c75a;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 800;
+    border-radius: 4px;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+.header-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #666;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover {
+    background-color: #f5f5f5;
+    color: #03c75a;
+}
+
+.nav-link.active {
+    background-color: #e8f9ef;
+    color: #03c75a;
+}
+
+.todo-main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 20px 40px;
+}
+
+.todo-panel {
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.panel-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.todo-count {
+    padding: 6px 12px;
+    background-color: #e8f9ef;
+    color: #03c75a;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 16px;
+}
+
+.search-bar {
+    padding: 16px 24px;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #fafafa;
+}
+
+.search-bar input {
+    width: 100%;
+    height: 44px;
+    padding: 0 16px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #222;
+    background-color: #fff;
+    outline: none;
+}
+
+.search-bar input::placeholder {
+    color: #999;
+}
+
+.search-bar input:focus {
+    border-color: #03c75a;
+    box-shadow: 0 0 0 3px rgba(3, 199, 90, 0.12);
+}
+
+.todo-list {
+    min-height: 200px;
+}
+
+.todo-loading,
+.todo-error,
+.todo-empty {
+    padding: 48px 24px;
+    text-align: center;
+    color: #888;
+    font-size: 15px;
+}
+
+.todo-error {
+    color: #e74c3c;
+}
+
+.todo-item {
+    display: grid;
+    grid-template-columns: 28px 48px 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 24px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.15s ease;
+}
+
+.todo-item:last-child {
+    border-bottom: none;
+}
+
+.todo-item:hover {
+    background-color: #fafafa;
+}
+
+.todo-item.completed .todo-title {
+    color: #999;
+    text-decoration: line-through;
+}
+
+.todo-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #fff;
+}
+
+.todo-item.completed .todo-check {
+    background-color: #03c75a;
+    border-color: #03c75a;
+}
+
+.todo-id {
+    font-size: 13px;
+    font-weight: 700;
+    color: #03c75a;
+}
+
+.todo-title {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #222;
+    word-break: keep-all;
+}
+
+.todo-status {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.todo-status.pending {
+    background-color: #fff4e5;
+    color: #f5a623;
+}
+
+.todo-status.done {
+    background-color: #e8f9ef;
+    color: #03c75a;
+}
+
+.naver-footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px 32px;
+    text-align: center;
+}
+
+.naver-footer p {
+    margin: 0;
+    color: #999;
+    font-size: 12px;
+}
+
+/* TODO 상세 페이지 */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 16px;
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: #03c75a;
+}
+
+.todo-detail-panel .detail-header {
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.detail-label {
+    margin: 0 0 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #03c75a;
+}
+
+.detail-title {
+    font-size: 22px;
+    line-height: 1.4;
+    word-break: keep-all;
+}
+
+.detail-body {
+    padding: 8px 24px 24px;
+}
+
+.detail-list {
+    margin: 0;
+    padding: 0;
+}
+
+.detail-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-row dt {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #888;
+}
+
+.detail-row dd {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    line-height: 1.5;
+}
+
+.detail-error {
+    margin-top: 0;
+    padding: 32px 24px;
+    background-color: #fff;
+    border: 1px solid #fde2e2;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.todo-detail-panel.is-completed .detail-title {
+    color: #999;
+    text-decoration: line-through;
+}
+
+@media (max-width: 640px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .todo-item {
+        grid-template-columns: 24px 40px 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .todo-status {
+        grid-column: 3;
+        justify-self: start;
+        margin-top: 4px;
+    }
+
+    .todo-detail-panel .detail-header {
+        flex-direction: column;
+    }
+
+    .detail-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+}

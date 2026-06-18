@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/todo-list.css">
+    <title>TODO 상세</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+</head>
+<body class="todo-page">
+
+    <header class="naver-header">
+        <div class="header-inner">
+            <a href="todo-list.html" class="naver-logo" aria-label="목록으로">
+                <span class="logo-n">N</span>
+                <span class="logo-text">TODO</span>
+            </a>
+            <nav class="header-nav">
+                <a href="todo-list.html" class="nav-link">목록</a>
+                <a href="#" class="nav-link active">상세</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="todo-main">
+        <a href="todo-list.html" class="back-link">← 목록으로 돌아가기</a>
+
+        <section class="todo-panel todo-detail-panel" id="todo-detail">
+            <div class="panel-header detail-header">
+                <div>
+                    <p class="detail-label">TODO 상세조회</p>
+                    <h1 class="panel-title detail-title" id="todo-title">불러오는 중...</h1>
+                </div>
+                <span class="todo-status pending" id="todo-status">로딩</span>
+            </div>
+
+            <div class="detail-body">
+                <dl class="detail-list">
+                    <div class="detail-row">
+                        <dt>할 일 ID</dt>
+                        <dd id="todo-id">-</dd>
+                    </div>
+                    <div class="detail-row">
+                        <dt>사용자 ID</dt>
+                        <dd id="todo-userId">-</dd>
+                    </div>
+                    <div class="detail-row">
+                        <dt>완료 여부</dt>
+                        <dd id="todo-completed">-</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <div class="todo-error detail-error" id="todo-error" hidden>
+            할 일 정보를 불러오지 못했습니다. ID를 확인한 뒤 다시 시도해주세요.
+        </div>
+    </main>
+
+    <footer class="naver-footer">
+        <p>JSONPlaceholder API · 학습용 TODO 상세</p>
+    </footer>
+
+    <script src="js/todo.js"></script>
+</body>
+</html>

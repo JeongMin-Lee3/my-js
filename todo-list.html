@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/todo-list.css">
+    <title>TODO 리스트</title>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+</head>
+<body class="todo-page">
+
+    <header class="naver-header">
+        <div class="header-inner">
+            <a href="#" class="naver-logo" aria-label="홈">
+                <span class="logo-n">N</span>
+                <span class="logo-text">TODO</span>
+            </a>
+            <nav class="header-nav">
+                <a href="#" class="nav-link active">할 일</a>
+                <a href="#" class="nav-link">완료</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="todo-main">
+        <section class="todo-panel">
+            <div class="panel-header">
+                <h1 class="panel-title">전체 할 일 목록</h1>
+                <span class="todo-count" id="todo-count">불러오는 중...</span>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="할 일을 검색해보세요" disabled>
+            </div>
+
+            <div id="todo-list-container" class="todo-list">
+                <div class="todo-loading">목록을 불러오고 있습니다...</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="naver-footer">
+        <p>JSONPlaceholder API · 학습용 TODO 리스트</p>
+    </footer>
+
+    <script src="js/todo-list.js"></script>
+</body>
+</html>
